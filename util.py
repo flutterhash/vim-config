@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # PYTHON_ARGCOMPLETE_OK
 
+#Copyright © 2015-2016 Thia Wyrod <thia@wyrod.ca>
+#All rights reserved.
+#Licensed under the 3-clause BSD License: see the included LICENSE file.
+
 import argparse, argcomplete
 import os, subprocess, shlex, shutil, re
 

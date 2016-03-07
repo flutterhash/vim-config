@@ -13,10 +13,5 @@ To update plugins, run "./util.py update". Any changes to plugins with compiled
 components will also require "rebuild" to be executed.
 
 Updating will take a moderate amount of time, as it checks upstream repositories
-of plugins for changes. It is also mysteriously quiet if there are
-no updates found, but rest assured that it is working.
-
-# YouCompleteMe Configuration (C-Family Syntax Checking and Autocompletion)
-
-YCM is bundled with this and is configured to compile with support for the
-C-family and Rust.
+of plugins for changes. It is also mysteriously quiet if there are no updates
+found, but rest assured that it is working.

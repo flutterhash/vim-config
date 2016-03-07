@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+#Copyright © 2015-2016 Thia Wyrod <thia@wyrod.ca>
+#All rights reserved.
+#Licensed under the 3-clause BSD License: see the included LICENSE file.
+
 import os, re, subprocess, shlex, traceback
 
 kSubmoduleDecl = re.compile('\\[submodule ".*"\\]')
