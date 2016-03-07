@@ -1,0 +1,123 @@
+let vimdir = $HOME.'/.vim'
+let vimcache = vimdir.'/.cache'
+"Function Definitions
+function! ScreenRestore()
+  let f = g:vimcache.'/.vimsize'
+  for line in readfile(f)
+      let sizepos = split(line)
+    silent! execute "set columns=".sizepos[0]." lines=".sizepos[1]
+    silent! execute "winpos ".sizepos[2]." ".sizepos[3]
+  endfor
+endfunction
+function! ScreenSave()
+  let f = g:vimcache.'/.vimsize'
+  let data = &columns . ' ' . &lines . ' ' . getwinposx() . ' ' . getwinposy()
+  let lines = [data]
+  call writefile(lines, f)
+endfunction
+"
+"Basic Functionality
+set nocompatible "to use these cool features!
+set nomodeline "security
+set autochdir "automatically call :cd when going to new file
+set number "line numbers
+set ruler "guarantee that we get cursor co-ords at the bottom
+set confirm "when risking loss, puts up dialog asking to save
+set hidden "buffers need not be saved to a file before switching
+set exrc " .vimrc in directory overrides any options set here
+set secure "makes the above less potentially dangerous?
+set colorcolumn=81
+set clipboard=unnamedplus "default is system copy-pasta
+set backspace=indent,eol,start
+set scrolloff=1 "always show at least one line above/below current
+set viminfo='0,<0,@0,f0,/0
+set history=1000
+set noswapfile
+set nobackup
+set gdefault "by default, replace all instances
+set splitbelow
+set splitright
+syntax on
+let mapleader=","
+"
+"GUI-Only Options
+if has("gui_running")
+  set guifont=Monospace\ 9
+  set guioptions=i
+  set guiheadroom=0
+  autocmd VimEnter * call ScreenRestore()
+  autocmd VimLeavePre * call ScreenSave()
+endif
+colorscheme default
+"
+"Filetypes
+au BufNewFile,BufRead *.gen set filetype=python
+"
+"Indentation
+filetype plugin on "tries to figure out filetype and indent properly
+filetype indent on
+set autoindent "keeps indentation, even if we don't have filetype recognized
+set cindent "C-like indentation
+set expandtab
+set tabstop=2
+set shiftwidth=2
+au Filetype python setl et ts=2 sw=2 "fixes Python TAB insanity
+let g:indent_guides_enable_on_vim_startup = 1
+"
+"Command Completion and Stuff
+set showcmd "shows current keystroke buffer in command mode
+set wildmenu "supposedly better CL completion
+set wildmode=longest:full,full "to match the longest common string possible
+set cmdheight=1
+set previewheight=25
+set cmdwinheight=25
+"
+"Search/Regex
+set ignorecase "all lowercase == matches both lower and upper
+set smartcase
+set hlsearch "highlight matches on-screen when searching
+set incsearch "incremental search: searching works as you type
+"
+"Text Autocompletion
+set completeopt-=preview
+"
+"Status Line
+set statusline=%t\ %m%=%l,%c\ %P
+"
+"Custom Vanilla Keybindings
+"save file
+nnoremap <C-s> :w<CR>
+"prevent save and quit, Ex nonsense
+nnoremap ZZ <NOP>
+vnoremap ZZ <NOP>
+nnoremap Q <NOP>
+"jump and recentre window functions
+nnoremap C zz
+vnoremap C zz
+nnoremap T zt
+vnoremap T zt
+nnoremap X zb
+vnoremap X zb
+"Window Manipulation
+nnoremap <C-Down>  <C-W>j
+nnoremap <C-Up>    <C-W>k
+nnoremap <C-Left>  <C-W>h
+nnoremap <C-Right> <C-W>l
+nnoremap <Leader>v  <C-W>v
+nnoremap <Leader>s  <C-W>s
+nnoremap <Leader>=  <C-W>=
+nnoremap <Leader>c  <C-W>c
+nnoremap <Leader>H  <C-W>H
+nnoremap <Leader>J  <C-W>J
+nnoremap <Leader>K  <C-W>K
+nnoremap <Leader>L  <C-W>L
+"Tab Manipulation
+nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>T :tabclose<CR>
+"Miscellaneous
+nnoremap ; :
+vnoremap ; :
+nnoremap <Leader>; q:
+vnoremap <Leader>; q:
+nnoremap <Leader><CR> :noh<CR>
+nnoremap g[ :pop<CR>
