@@ -43,7 +43,7 @@ def rebuild_color_coded(num_cores):
   os.makedirs(build_dir, exist_ok=True)
   os.chdir(build_dir)
   cmake_vars = [ '-DCUSTOM_CLANG=1', '-DLLVM_ROOT_PATH=/usr',
-    '-DLLVM_INCLUDE_PATH=/usr/lib/llvm-3.7/include'
+    '-DLLVM_INCLUDE_PATH=/usr/lib/llvm-3.8/include'
   ]
   subprocess_exec('cmake {1} {0}'.format(' '.join(cmake_vars), src_dir))
   subprocess_exec('make -j{0}'.format(num_cores))
