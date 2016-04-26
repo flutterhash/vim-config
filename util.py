@@ -21,7 +21,8 @@ def update_all():
   dir_list = [ d.path for d in os.scandir(os.path.join(base_dir, 'bundle'))
     if d.is_dir() ]
   for d in dir_list:
-    if os.path.exists(os.path.join(d, '.git')):
+    if os.path.exists(os.path.join(d, '.gitmodules')):
+      os.chdir(d)
       subprocess_exec('git submodule update --init --recursive')
   os.chdir(base_dir)
 
@@ -84,7 +85,7 @@ def install_all():
 kValidCmds = {
   'update': update_all,
   'rebuild': rebuild_all,
-  'install': install_all
+  'install': install_all,
 }
 
 
@@ -102,6 +103,5 @@ def parse_argv():
 
 if __name__ == '__main__':
   argv = parse_argv()
-  print_usage = False
   for cmd in argv.cmds:
     kValidCmds[cmd]()
