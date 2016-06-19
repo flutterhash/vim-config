@@ -67,7 +67,6 @@ set cindent "C-like indentation
 set expandtab
 set tabstop=4
 set shiftwidth=4
-au Filetype python setl et ts=4 sw=4 "fixes Python TAB insanity
 let g:indent_guides_enable_on_vim_startup = 1
 "
 "Command Completion and Stuff
