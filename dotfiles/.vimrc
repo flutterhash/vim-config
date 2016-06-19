@@ -191,6 +191,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2 "auto-close, but never auto-open
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers = ['python']
+let g:syntastic_asm_checkers = ['']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 "
 "YCM
