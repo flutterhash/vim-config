@@ -210,7 +210,7 @@ nnoremap <Leader>] :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>[ :YcmCompleter GoToDeclaration<CR>
 "
 "clang-format
-let g:clang_format#command = 'clang-format-3.7'
+let g:clang_format#command = 'clang-format-3.8'
 let g:clang_format#auto_format = 0
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#style_options = {
