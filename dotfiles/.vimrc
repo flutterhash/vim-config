@@ -201,7 +201,6 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_show_diagnostics_ui = 1
-let g:ycm_global_ycm_extra_conf = vimdir.'/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_complete_in_comments = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0
@@ -210,7 +209,7 @@ nnoremap <Leader>] :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>[ :YcmCompleter GoToDeclaration<CR>
 "
 "clang-format
-let g:clang_format#command = 'clang-format-3.8'
+let g:clang_format#command = 'clang-format-3.9'
 let g:clang_format#auto_format = 0
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#style_options = {
