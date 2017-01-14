@@ -165,6 +165,8 @@ let g:ctrlp_map = ''
 let g:ctrlp_cmd = ''
 let g:ctrlp_mruf_max = 100
 let g:ctrlp_max_history = 0
+let g:ctrlp_max_files = 0
+let g:ctrlp_dotfiles = 1
 let g:ctrlp_cache_dir = vimcache.'/ctrlp'
 let g:ctrlp_match_window = 'max:50'
 nnoremap <Leader>p :CtrlP<CR>
