@@ -82,3 +82,7 @@
 	path = pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 	branch = master
+[submodule "bundle/vim-toml"]
+	path = bundle/vim-toml
+	url = https://github.com/cespare/vim-toml
+	branch = master
