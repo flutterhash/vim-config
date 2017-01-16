@@ -180,14 +180,6 @@ let g:surround_42="/* \r */"
 "Rust.vim
 let g:rust_recommended_style = 0
 "
-"CTags
-let g:vim_tags_cache_dir = vimcache
-let g:easytags_auto_highlight = 1
-let g:easytags_auto_update = 0
-let g:easytags_python_enabled = 1
-let g:easytags_include_members = 1
-nnoremap <Leader>u :TagsGenerate<CR> :HighlightTags<CR>
-"
 "Syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_balloons = 1
