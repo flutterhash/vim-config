@@ -37,26 +37,9 @@ def rebuild_ycm(num_cores):
     os.chdir(c_dir)
 
 
-def rebuild_color_coded(num_cores):
-    c_dir = os.getcwd()
-    src_dir = os.path.join(c_dir, 'bundle/color_coded')
-    build_dir = '/tmp/builds/color_coded-temp'
-    os.makedirs(build_dir, exist_ok=True)
-    os.chdir(build_dir)
-    cmake_vars = [ '-DCUSTOM_CLANG=1', '-DLLVM_ROOT_PATH=/usr',
-        '-DLLVM_INCLUDE_PATH=/usr/lib/llvm-3.9/include'
-    ]
-    subprocess_exec('cmake {1} {0}'.format(' '.join(cmake_vars), src_dir))
-    subprocess_exec('make -j{0}'.format(num_cores))
-    subprocess_exec('make install')
-    os.chdir(c_dir)
-    shutil.rmtree(build_dir)
-
-
 def rebuild_all():
     num_cores = subprocess.check_output(shlex.split('grep -c ^processor /proc/cpuinfo'))
     num_cores = str(num_cores.strip(b'\n').strip(), encoding='ascii')
-    rebuild_color_coded(num_cores)
     rebuild_ycm(num_cores)
 
 

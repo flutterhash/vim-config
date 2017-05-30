@@ -66,10 +66,6 @@
 	path = bundle/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
 	branch = master
-[submodule "bundle/color_coded"]
-	path = bundle/color_coded
-	url = https://github.com/jeaye/color_coded.git
-	branch = master
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
