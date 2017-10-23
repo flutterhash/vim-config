@@ -117,14 +117,6 @@ map <Plug>(easymotion-prefix)r <Plug>(easymotion-ge)
 map <Plug>(easymotion-prefix)R <Plug>(easymotion-gE)
 map <Plug>(easymotion-prefix)f <Plug>(easymotion-f)
 map <Plug>(easymotion-prefix)g <Plug>(easymotion-F)
-
-map <NOP> <Plug>(easymotion-ge)
-map <NOP> <Plug>(easymotion-gE)
-map <NOP> <Plug>(easymotion-s)
-map <NOP> <Plug>(easymotion-t)
-map <NOP> <Plug>(easymotion-T)
-map <NOP> <Plug>(easymotion-n)
-map <NOP> <Plug>(easymotion-N)
 "
 "MiniBufExplorer
 nnoremap <Leader><Leader>b :MBEToggle<CR>
