@@ -177,3 +177,6 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader><Leader>f :ClangFormat<CR>
 "cargo-fmt
 autocmd FileType rs nnoremap <buffer><Leader><Leader>f :!cargo-fmt
 autocmd FileType rs vnoremap <buffer><Leader><Leader>f :!cargo-fmt
+"
+"neomake
+call neomake#configure#automake('w')
