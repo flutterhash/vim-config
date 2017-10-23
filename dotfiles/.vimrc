@@ -153,16 +153,6 @@ let g:surround_42="/* \r */"
 "Rust.vim
 let g:rust_recommended_style = 0
 "
-"Syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2 "auto-close, but never auto-open
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers = ['python']
-let g:syntastic_asm_checkers = ['']
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-"
 "YCM
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_complete_in_comments = 1

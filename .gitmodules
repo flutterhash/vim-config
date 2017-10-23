@@ -18,10 +18,6 @@
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 	branch = master
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
-	branch = master
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
