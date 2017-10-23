@@ -3,21 +3,6 @@ execute pathogen#infect()
 "
 let vimdir = $HOME.'/.vim'
 let vimcache = vimdir.'/.cache'
-"Function Definitions
-function! ScreenRestore()
-  let f = g:vimcache.'/.vimsize'
-  for line in readfile(f)
-      let sizepos = split(line)
-    silent! execute "set columns=".sizepos[0]." lines=".sizepos[1]
-    silent! execute "winpos ".sizepos[2]." ".sizepos[3]
-  endfor
-endfunction
-function! ScreenSave()
-  let f = g:vimcache.'/.vimsize'
-  let data = &columns . ' ' . &lines . ' ' . getwinposx() . ' ' . getwinposy()
-  let lines = [data]
-  call writefile(lines, f)
-endfunction
 "
 "Basic Functionality
 set nocompatible "to use these cool features!
@@ -42,19 +27,7 @@ set splitbelow
 set splitright
 syntax on
 let mapleader=","
-"
-"GUI-Only Options
-if has("gui_running")
-  colorscheme github "light theme
-  "colorscheme twilight
-  set guifont=Monospace\ 9
-  set guioptions=i
-  set guiheadroom=0
-  autocmd VimEnter * call ScreenRestore()
-  autocmd VimLeavePre * call ScreenSave()
-else
-  colorscheme default
-endif
+colorscheme default
 "
 "Filetypes
 au BufNewFile,BufRead *.gen set filetype=python
