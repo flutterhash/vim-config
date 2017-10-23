@@ -158,13 +158,12 @@ nnoremap <Leader>] :YcmCompleter GoToDefinition<CR>
 nnoremap <Leader>[ :YcmCompleter GoToDeclaration<CR>
 "
 "clang-format
-let g:clang_format#command = 'clang-format-3.9'
+let g:clang_format#command = 'clang-format-5.0'
 let g:clang_format#auto_format = 0
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#style_options = {
   \ "Standard": "Cpp11" }
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader><Leader>f :ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader><Leader>f :ClangFormat<CR>
 "
 "cargo-fmt
 autocmd FileType rs nnoremap <buffer><Leader><Leader>f :!cargo-fmt
