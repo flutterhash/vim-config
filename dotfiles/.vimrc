@@ -168,5 +168,10 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader><Leader>f :ClangFormat<CR>
 "cargo-fmt
 autocmd FileType rs nnoremap <buffer><Leader><Leader>f :!cargo-fmt
 "
+"ultisnips
+let g:UltiSnipsExpandTrigger="<Leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<Leader>n"
+let g:UltiSnipsJumpBackwardTrigger="<Leader>b"
+"
 "neomake
 call neomake#configure#automake('w')

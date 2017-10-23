@@ -82,3 +82,11 @@
 	path = bundle/neomake
 	url = https://github.com/neomake/neomake
 	branch = master
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets
+	branch = master
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
+	branch = master
