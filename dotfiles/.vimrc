@@ -25,12 +25,13 @@ set nobackup
 set gdefault "by default, replace all instances
 set splitbelow
 set splitright
+set autoread
 syntax on
 let mapleader=","
 colorscheme default
 "
 "Filetypes
-au BufNewFile,BufRead *.gen set filetype=python
+autocmd FocusGained * :checktime
 "
 "Indentation
 filetype plugin on "tries to figure out filetype and indent properly
@@ -66,16 +67,12 @@ set statusline=%t\ %m%=%l,%c\ %P
 "save file
 nnoremap <C-s> :w<CR>
 "prevent save and quit, Ex nonsense
-nnoremap ZZ <NOP>
-vnoremap ZZ <NOP>
-nnoremap Q <NOP>
+noremap ZZ <NOP>
+noremap Q <NOP>
 "jump and recentre window functions
-nnoremap C zz
-vnoremap C zz
-nnoremap T zt
-vnoremap T zt
-nnoremap X zb
-vnoremap X zb
+noremap C zz
+noremap T zt
+noremap X zb
 "Window Manipulation
 nnoremap <C-Down>  <C-W>j
 nnoremap <C-Up>    <C-W>k
@@ -93,10 +90,8 @@ nnoremap <Leader>L  <C-W>L
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>T :tabclose<CR>
 "Miscellaneous
-nnoremap ; :
-vnoremap ; :
-nnoremap <Leader>; q:
-vnoremap <Leader>; q:
+noremap ; :
+noremap <Leader>; q:
 nnoremap <Leader><CR> :noh<CR>
 nnoremap g[ :pop<CR>
 "
