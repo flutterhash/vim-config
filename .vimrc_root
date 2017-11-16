@@ -35,10 +35,8 @@ filetype indent on
 set autoindent "keeps indentation, even if we don't have filetype recognized
 set cindent "C-like indentation
 set expandtab
-set tabstop=2
-set shiftwidth=2
-au Filetype python setl et ts=2 sw=2 "fixes Python TAB insanity
-let g:indent_guides_enable_on_vim_startup = 1
+set tabstop=4
+set shiftwidth=4
 "
 "Command Completion and Stuff
 set showcmd "shows current keystroke buffer in command mode
