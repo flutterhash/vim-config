@@ -170,3 +170,17 @@ let g:UltiSnipsJumpBackwardTrigger="<Leader>b"
 "
 "neomake
 call neomake#configure#automake('w')
+let g:neomake_error_sign = {'text': '>>', 'texthl': 'YcmErrorSign'}
+let g:neomake_warning_sign = {'text': '>', 'texthl': 'YcmWarningSign'}
+let g:neomake_cpp_enabled_makers = []
+let g:neomake_c_enabled_makers = []
+let g:neomake_python_maker = {
+\  'append_file': 1,
+\  'args': ['/home/thia/.vim/bundle/neomake/autoload/neomake/makers/ft/python/compile.py'],
+\  'auto_enabled': 1,
+\  'errorformat': '%E%f:%l:%c: %m',
+\  'exe': 'python3',
+\  'output_stream': 'stdout',
+\  'serialize': 1,
+\  'serialize_abort_on_error': 1,
+\}
