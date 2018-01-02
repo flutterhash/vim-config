@@ -157,7 +157,8 @@ let g:clang_format#command = 'clang-format-5.0'
 let g:clang_format#auto_format = 0
 let g:clang_format#code_style = 'llvm'
 let g:clang_format#style_options = {
-  \ "Standard": "Cpp11" }
+\  "Standard": "Cpp11"
+\}
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader><Leader>f :ClangFormat<CR>
 "
 "cargo-fmt
@@ -174,6 +175,7 @@ let g:neomake_error_sign = {'text': '>>', 'texthl': 'YcmErrorSign'}
 let g:neomake_warning_sign = {'text': '>', 'texthl': 'YcmWarningSign'}
 let g:neomake_cpp_enabled_makers = []
 let g:neomake_c_enabled_makers = []
+let g:neomake_rust_enabled_makers = []
 let g:neomake_python_maker = {
 \  'append_file': 1,
 \  'args': ['/home/thia/.vim/bundle/neomake/autoload/neomake/makers/ft/python/compile.py'],
@@ -183,4 +185,36 @@ let g:neomake_python_maker = {
 \  'output_stream': 'stdout',
 \  'serialize': 1,
 \  'serialize_abort_on_error': 1,
+\}
+"
+"LanguageClient
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+\  'rust': ['rustup', 'run', 'nightly', 'rls'],
+\}
+let g:LanguageClient_diagnosticsDisplay = {
+\  1: {
+\      "name": "Error",
+\      "texthl": "ALEError",
+\      "signText": ">>",
+\      "signTexthl": "ALEErrorSign",
+\  },
+\  2: {
+\      "name": "Warning",
+\      "texthl": "ALEWarning",
+\      "signText": ">",
+\      "signTexthl": "ALEWarningSign",
+\  },
+\  3: {
+\      "name": "Information",
+\      "texthl": "ALEInfo",
+\      "signText": "i",
+\      "signTexthl": "ALEInfoSign",
+\  },
+\  4: {
+\      "name": "Hint",
+\      "texthl": "ALEInfo",
+\      "signText": "*",
+\      "signTexthl": "ALEInfoSign",
+\  },
 \}

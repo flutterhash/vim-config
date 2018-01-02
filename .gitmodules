@@ -90,3 +90,7 @@
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
 	branch = master
+[submodule "bundle/LanguageClient-neovim"]
+	path = bundle/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+	branch = master
